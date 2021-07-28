@@ -58,10 +58,13 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Enums" t="Include">
+            <e p="ControlConstants.cs" t="Include" />
             <e p="TagConstants.cs" t="Include" />
           </e>
           <e p="NPCInteractionBounds.cs" t="Include" />
-          <e p="UiManager.cs" t="Include" />
+          <e p="UI" t="Include">
+            <e p="UiManager.cs" t="Include" />
+          </e>
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
