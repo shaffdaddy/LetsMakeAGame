@@ -1,18 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class NPCInteractionBounds : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private UiManager uiManager;
+
+    private void Start()
     {
-        
+        if (!uiManager)
+        {
+            uiManager = GameObject.FindWithTag(TagConstants.UI_MANAGER).GetComponent<UiManager>();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.tag.Equals(TagConstants.PLAYER))
+        {
+            uiManager.SetPuzzleOverlayActive(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag.Equals(TagConstants.PLAYER))
+        {
+            uiManager.SetPuzzleOverlayActive(false);
+        }
     }
 }
