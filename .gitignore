@@ -73,18 +73,6 @@ ehthumbs.db
 [Tt]humbs.db
 [Dd]esktop.ini
 
-# Visual Studio / MonoDevelop generated
-# =====================================
-[Ee]xported[Oo]bj/
-*.userprefs
-*.csproj
-*.pidb
-*.suo
-*.sln
-*.user
-*.unityproj
-*.booproj
-
 # Unity generated
 # ===============
 [Oo]bj/
