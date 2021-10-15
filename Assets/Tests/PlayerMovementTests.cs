@@ -29,13 +29,13 @@ public class PlayerMovementTests
         Object.Destroy(inputManager);
 
         var mockInputManager = new GameObject("InputManager");
-        mockInputManager.AddComponent<MockInputManager>();
+        mockInputManager.AddComponent<InputMockController>();
 
         var timeManager = GameObject.Find("TimeManager");
         Object.Destroy(timeManager);
 
         var mockTimeManager = new GameObject("TimeManager");
-        mockTimeManager.AddComponent<MockTimeManager>();
+        mockTimeManager.AddComponent<TimeMockController>();
 
         yield return null;
 
@@ -66,8 +66,16 @@ public class PlayerMovementTests
     {
         var player = GameObject.FindGameObjectWithTag("Player");
         
+        var inputManager = GameObject.Find("InputManager");
+        var inputController = inputManager.GetComponent<InputMockController>();
+        inputController["GetAxis"].CalledWith("Horizontal").Returns(2);
+
+        var timeManager = GameObject.Find("TimeManager");
+        var timeController = timeManager.GetComponent<TimeMockController>();
+        timeController.DeltaTime = 1;
+
         yield return null;
 
-        Assert.That(player.transform.position.x, Is.EqualTo(500));
+        Assert.That(player.transform.position.x, Is.EqualTo(10));
     }
 }

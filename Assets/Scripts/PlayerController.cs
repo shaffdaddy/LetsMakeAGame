@@ -3,15 +3,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
     public GameObject player;
 
+    [SerializeField]
     public float speed = 5.0f;
 
     private Transform playerTransform;
     private IInput input;
     private ITime time;
 
-    // Start is called before the first frame update
     void Start()
     {
         playerTransform = player.GetComponent<Transform>();
@@ -26,7 +27,6 @@ public class PlayerController : MonoBehaviour
         time = timeManager.GetComponent<ITime>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         float x = input.GetAxis("Horizontal");
