@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PuzzleUI
   - UiManager
+  - NPC
   layers:
   - Default
   - TransparentFX

@@ -37,4 +37,12 @@ public class PlayerController : MonoBehaviour
         playerTransform.Translate(xMovement, yMovement, 0);
 
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("NPC"))
+        {
+            Debug.Log("Steal memory");
+        }
+    }
 }
