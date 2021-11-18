@@ -78,4 +78,22 @@ public class PlayerMovementTests
 
         Assert.That(player.transform.position.x, Is.EqualTo(10));
     }
+
+    [UnityTest]
+    public IEnumerator GivenUserWhenUserEntersInVerticalInputThenPlayableCharacterIsMovedAlongYAxis()
+    {
+        var player = GameObject.FindGameObjectWithTag("Player");
+
+        var inputManager = GameObject.Find("InputManager");
+        var inputController = inputManager.GetComponent<InputMockController>();
+        inputController["GetAxis"].CalledWith("Vertical").Returns(2);
+
+        var timeManager = GameObject.Find("TimeManager");
+        var timeController = timeManager.GetComponent<TimeMockController>();
+        timeController.DeltaTime = 1;
+
+        yield return null;
+
+        Assert.That(player.transform.position.y, Is.EqualTo(10));
+    }
 }

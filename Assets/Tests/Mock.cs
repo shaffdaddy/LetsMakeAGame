@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 
 public class Mock
 {
+    private readonly List<string> arguments;
+
     public float Value
     {
         get;
@@ -10,13 +13,24 @@ public class Mock
 
     public string Argument
     {
-        get;
-        set;
+        get
+        {
+            return arguments[arguments.Count - 1];
+        }
+        set
+        {
+            arguments.Add(value);
+        }
+    }
+
+    public Mock()
+    {
+        arguments = new List<string>();
     }
 
     public Mock CalledWith(string arg)
     {
-        if(Argument != arg)
+        if(!arguments.Contains(arg))
         {
             throw new Exception("Not called with argument: " + arg);
         }

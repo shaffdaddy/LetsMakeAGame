@@ -1,4 +1,4 @@
-using Interfaces;
+using Core.Interfaces;
 using UnityEngine;
 
 public class TimeMockController : MonoBehaviour, ITime

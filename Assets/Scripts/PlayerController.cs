@@ -1,4 +1,4 @@
-using Interfaces;
+using Core.Interfaces;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -30,10 +30,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float x = input.GetAxis("Horizontal");
-        float xMovement = x * speed;
-        xMovement *= time.DeltaTime;
+        float y = input.GetAxis("Vertical");
+        float xMovement = x * speed * time.DeltaTime;
+        float yMovement = y * speed * time.DeltaTime;
 
-        playerTransform.Translate(xMovement, 0, 0);
+        playerTransform.Translate(xMovement, yMovement, 0);
 
     }
 }

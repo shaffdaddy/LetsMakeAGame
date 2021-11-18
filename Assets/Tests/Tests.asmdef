@@ -11,7 +11,7 @@
     "overrideReferences": true,
     "precompiledReferences": [
         "nunit.framework.dll",
-        "Interfaces.dll"
+        "Core.dll"
     ],
     "autoReferenced": false,
     "defineConstraints": [

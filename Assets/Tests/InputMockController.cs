@@ -1,10 +1,10 @@
-using Interfaces;
 using System.Collections.Generic;
+using Core.Interfaces;
 using UnityEngine;
 
 public class InputMockController : MonoBehaviour, IInput
 {
-    private Dictionary<string, Mock> mock = new Dictionary<string, Mock>()
+    private readonly Dictionary<string, Mock> mock = new Dictionary<string, Mock>()
     {
         { "GetAxis", new Mock() }
     };
