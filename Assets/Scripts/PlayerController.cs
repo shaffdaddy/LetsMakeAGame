@@ -10,12 +10,17 @@ public class PlayerController : MonoBehaviour
     public float speed = 5.0f;
 
     private Transform playerTransform;
+    private AudioSource memorySteal;
+
     private IInput input;
     private ITime time;
+    private int memoryCount;
 
     void Start()
     {
         playerTransform = player.GetComponent<Transform>();
+        memorySteal = GetComponent<AudioSource>();
+        memoryCount = 0;
     }
 
     private void OnEnable()
@@ -42,7 +47,9 @@ public class PlayerController : MonoBehaviour
     {
         if(other.CompareTag("NPC"))
         {
-            Debug.Log("Steal memory");
+            memorySteal.Play();
+            memoryCount++;
+            Debug.Log("Stolen memory: " + memoryCount);
         }
     }
 }
