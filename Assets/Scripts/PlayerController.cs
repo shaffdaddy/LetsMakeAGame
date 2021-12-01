@@ -1,26 +1,30 @@
 using Core.Interfaces;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, ICountable
 {
     [SerializeField]
-    public GameObject player;
+    private GameObject player;
 
     [SerializeField]
-    public float speed = 5.0f;
+    private float speed = 5.0f;
 
     private Transform playerTransform;
-    private AudioSource memorySteal;
 
     private IInput input;
     private ITime time;
-    private int memoryCount;
+    private IAudiable memorySteal;
+
+    public int Count
+    {
+        get;
+        private set;
+    }
 
     void Start()
     {
         playerTransform = player.GetComponent<Transform>();
-        memorySteal = GetComponent<AudioSource>();
-        memoryCount = 0;
+        Count = 0;
     }
 
     private void OnEnable()
@@ -30,6 +34,8 @@ public class PlayerController : MonoBehaviour
 
         var timeManager = GameObject.Find("TimeManager");
         time = timeManager.GetComponent<ITime>();
+
+        memorySteal = GetComponent<IAudiable>();
     }
 
     void Update()
@@ -45,11 +51,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("NPC"))
+        if (other.CompareTag("NPC"))
         {
+            Count++;
             memorySteal.Play();
-            memoryCount++;
-            Debug.Log("Stolen memory: " + memoryCount);
+            Debug.Log("Stolen memory: " + Count);
         }
     }
 }

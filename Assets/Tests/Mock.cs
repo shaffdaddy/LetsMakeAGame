@@ -23,9 +23,16 @@ public class Mock
         }
     }
 
+    public int Count
+    {
+        get;
+        set;
+    }
+
     public Mock()
     {
         arguments = new List<string>();
+        Count = 0;
     }
 
     public Mock CalledWith(string arg)
@@ -41,6 +48,16 @@ public class Mock
     public void Returns(float value)
     {
         Value = value;
+    }
+
+    public bool CalledOnce()
+    {
+        return Count == 1;
+    }
+
+    public bool IsNotCalled()
+    {
+        return Count == 0;
     }
 }
 
