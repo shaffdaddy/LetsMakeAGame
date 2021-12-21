@@ -1,4 +1,5 @@
 using Core.Interfaces;
+using TMPro;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour, ICountable
@@ -8,6 +9,12 @@ public class PlayerController : MonoBehaviour, ICountable
 
     [SerializeField]
     private float speed = 5.0f;
+
+    [SerializeField]
+    private ParticleSystem memoryParticle;
+
+    [SerializeField]
+    private TextMeshProUGUI score;
 
     private Transform playerTransform;
 
@@ -55,7 +62,9 @@ public class PlayerController : MonoBehaviour, ICountable
         {
             Count++;
             memorySteal.Play();
+            memoryParticle.Play();
             Debug.Log("Stolen memory: " + Count);
+            score.text = Count.ToString();
         }
     }
 }
