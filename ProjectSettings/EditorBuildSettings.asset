@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: a2773a569e5a6fe4caf384fa58637b25
+  - enabled: 1
+    path: Assets/Tests/Scenes/MovementPlayerController.unity
+    guid: ece5ccd372be546f4b4d3978f5c2658a
   m_configObjects: {}
