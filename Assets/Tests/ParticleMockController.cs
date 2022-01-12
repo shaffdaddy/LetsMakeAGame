@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Core.Interfaces;
 using UnityEngine;
 
-public class AudioSourceMockController : MonoBehaviour, IAudiable
+public class ParticleMockController : MonoBehaviour, IParticleSystem
 {
     private readonly Dictionary<string, Mock> mock = new Dictionary<string, Mock>()
     {
@@ -11,8 +11,8 @@ public class AudioSourceMockController : MonoBehaviour, IAudiable
 
     public void Play()
     {
-        var temp = mock["Play"];
-        temp.Count++;
+        var tmp = mock["Play"];
+        tmp.Count++;
     }
 
     public Mock this[string functionName]

@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 480514754}
   - component: {fileID: 480514755}
   - component: {fileID: 480514756}
+  - component: {fileID: 480514757}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -349,8 +350,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c082ccffde67e974a89aa7c601dab0dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 480514748}
-  speed: 5
   memoryParticle: {fileID: 158642642}
   score: {fileID: 1374640748}
 --- !u!54 &480514754
@@ -477,6 +476,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6916d74f49dcd421492b2aa295e5db5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &480514757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480514748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c408bc0617b49f4ae65781ea060ae6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
 --- !u!1 &737636889
 GameObject:
   m_ObjectHideFlags: 0
