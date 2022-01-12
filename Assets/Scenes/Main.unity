@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!198 &158642642 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 4841570504886675949, guid: 228a317601d364fe089b4f76fb422be1, type: 3}
-  m_PrefabInstance: {fileID: 1991579663}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &217251679
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,11 +244,11 @@ GameObject:
   - component: {fileID: 480514751}
   - component: {fileID: 480514750}
   - component: {fileID: 480514749}
-  - component: {fileID: 480514753}
   - component: {fileID: 480514754}
   - component: {fileID: 480514755}
-  - component: {fileID: 480514756}
   - component: {fileID: 480514757}
+  - component: {fileID: 480514753}
+  - component: {fileID: 480514756}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -347,10 +342,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 480514748}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c082ccffde67e974a89aa7c601dab0dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 06b6d48c06c224a9b8a98dbb15e00503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  memoryParticle: {fileID: 158642642}
   score: {fileID: 1374640748}
 --- !u!54 &480514754
 Rigidbody:
@@ -1082,6 +1076,7 @@ GameObject:
   - component: {fileID: 1416538448}
   - component: {fileID: 1416538447}
   - component: {fileID: 1416538446}
+  - component: {fileID: 1416538445}
   m_Layer: 0
   m_Name: NPC
   m_TagString: NPC
@@ -1089,6 +1084,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1416538445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416538444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4864a81a84cc4d2b84fd7eb7ec920d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1991579665}
 --- !u!136 &1416538446
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1270,5 +1278,10 @@ PrefabInstance:
 --- !u!4 &1991579664 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4841570504886675948, guid: 228a317601d364fe089b4f76fb422be1, type: 3}
+  m_PrefabInstance: {fileID: 1991579663}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1991579665 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4841570504886675949, guid: 228a317601d364fe089b4f76fb422be1, type: 3}
   m_PrefabInstance: {fileID: 1991579663}
   m_PrefabAsset: {fileID: 0}

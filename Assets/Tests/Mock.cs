@@ -55,9 +55,8 @@ public class Mock
         return Count == 1;
     }
 
-    public bool IsNotCalled()
+public bool IsNotCalled()
     {
         return Count == 0;
     }
 }
-
